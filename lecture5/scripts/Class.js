@@ -73,20 +73,23 @@ function SwitchTo(id){
     document.getElementById('factory_classname_value').innerHTML = classname;
 }
 function ReachURL(){
-    fetch("http://" + document.getElementById('inputURL').value)
+    fetch("https://cors-anywhere.herokuapp.com/http://" + document.getElementById('inputURL').value)
     //.then(response => response.json())
     .then(function(response){
         if(response.status != 200){
-            prompt("Something is wrong");
+            window.alert("Something is wrong");
             console.log("Something is wrong");
             return;
         }
-        response.json().then(function(data) {
-            console.log(data);
-          });
+        window.open("http://" + document.getElementById('inputURL').value);
     })
+    //.then(//{function(){
+        
+        //}
+    //}
+    //)
     .catch(function(err) {
-        prompt("Something is wrong. So put something else)))");
-        console.log('Fetch Error :-S', err);
+        window.alert("Something is wrong");
+        console.log("Something is wrong");
       });
 }
