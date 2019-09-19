@@ -83,11 +83,6 @@ function ReachURL(){
         }
         window.open("http://" + document.getElementById('inputURL').value);
     })
-    //.then(//{function(){
-        
-        //}
-    //}
-    //)
     .catch(function(err) {
         window.alert("Something is wrong");
         console.log("Something is wrong");
